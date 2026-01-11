@@ -19,7 +19,7 @@ print(f"Benchmarking Rate Limiter with {TOTAL_REQUESTS} concurrent requests...")
 status_codes = []
 latencies = []
 
-# Send 50 requests at the exact same time
+
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
     results = list(executor.map(send_request, range(TOTAL_REQUESTS)))
 
@@ -27,7 +27,7 @@ for code, latency in results:
     status_codes.append(code)
     latencies.append(latency)
 
-# Generate Report
+
 print("\n--- REPORT ---")
 print(f"Total Requests: {TOTAL_REQUESTS}")
 print(f"Allowed (200 OK): {status_codes.count(200)}")
