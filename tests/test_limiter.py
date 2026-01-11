@@ -1,13 +1,12 @@
 import requests
 import time
 
-# Ensure this matches your running uvicorn URL
 BASE_URL = "http://127.0.0.1:8000"
 
 def test_rate_limiting():
     print(f" Testing API at {BASE_URL}...")
     
-    # 1. Send 5 allowed requests (Assuming limit is 10 or 5)
+    
     for i in range(5):
         try:
             response = requests.get(BASE_URL)
@@ -19,7 +18,7 @@ def test_rate_limiting():
             print(" Error: Could not connect. Is 'uvicorn' running in another terminal?")
             return
 
-    # 2. Burst Test: Send 10 fast requests to trigger the limit
+    
     print("\n Starting Burst Test...")
     blocked = False
     for i in range(10):
