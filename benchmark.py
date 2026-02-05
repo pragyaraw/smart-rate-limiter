@@ -2,7 +2,7 @@ import requests
 import time
 import concurrent.futures
 
-URL = "http://127.0.0.1:8000"
+URL = "http://127.0.0.1:8000/data"
 TOTAL_REQUESTS = 50
 
 def send_request(i):
